@@ -1,24 +1,26 @@
 import Head from 'next/head'
 import Layout from '../components/layout';
+import axios from 'axios';
+import moment from 'moment';
 
-export default function Home() {
+const Home = ({ item }) => {
   return (
     <Layout>
-      <div className="columns mt-4">
+      <div className="columns my-6">
         <div className="column is-half is-offset-one-quarter">
           <div className="box">
             <article className="media">
               <div className="media-left">
                 <figure className="image is-64x64">
-                  <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image" />
+                  <img src={item.icon_url} alt="Image" />
                 </figure>
               </div>
               <div className="media-content">
                 <div className="content">
                   <p>
-                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                    <strong>Chuck Norris</strong> <small>@chucknorris</small> <small>{moment(item.created_at).fromNow()}</small>
                     <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                    {item.value} 
                   </p>
                 </div>
                 <nav className="level is-mobile">
@@ -47,4 +49,11 @@ export default function Home() {
       </div>
     </Layout>
   );
+};
+
+export async function getServerSideProps() {
+  const request = await axios('https://api.chucknorris.io/jokes/random');
+  return { props: { item: request.data } };
 }
+
+export default Home;
