@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Layout = ({ children }) => (
   <>
@@ -7,10 +8,10 @@ const Layout = ({ children }) => (
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
 
-    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-warning is-expanded" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        <a class="navbar-item" href="/">
+          Chuck Norris
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -22,7 +23,7 @@ const Layout = ({ children }) => (
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item">
+          <a href="/" class="navbar-item">
             Home
           </a>
 
@@ -32,41 +33,67 @@ const Layout = ({ children }) => (
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">
+              <a href="/animal" class="navbar-item">
                 Animal
               </a>
-              <a class="navbar-item">
+
+              <a href="/career" class="navbar-item">
                 Career
               </a>
-              <a class="navbar-item">
+
+              <a href="/celebrity" class="navbar-item">
                 Celebrity
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/dev" class="navbar-item">
                 Dev
-              </a><a class="navbar-item">
+              </a>
+              
+              <a href="/explicit" class="navbar-item">
                 Explicit
-              </a><a class="navbar-item">
+              </a>
+              
+              <a href="/fashion" class="navbar-item">
                 Fashion
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/food" class="navbar-item">
                 Food
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/history" class="navbar-item">
                 History
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/money" class="navbar-item">
                 Money
-              </a><a class="navbar-item">
+              </a>
+              
+              <a href="/movie"class="navbar-item">
                 Movie
-              </a><a class="navbar-item">
+              </a>
+              
+              <a href="/music" class="navbar-item">
                 Music
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/politician" class="navbar-item">
                 Politician
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/religion" class="navbar-item">
                 Religion
-              </a><a class="navbar-item">
+              </a>
+
+              <a href="/science" class="navbar-item">
                 Science
               </a>
-              <a class="navbar-item">
+
+              <a href="sport" class="navbar-item">
                 Sport
               </a>
-              <a class="navbar-item">
+
+              <a href="travel" class="navbar-item">
                 Travel
               </a>
             </div>
